@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import Posts from './components/posts'
+import Posts from './components/posts';
+import MainPage from './components/MainPage';
 import logo from './logo.svg';
 import './App.css';
+import Routes from './components/routes';
 
 class App extends Component{
 
@@ -13,26 +15,26 @@ class App extends Component{
 
   //This will fetch the posts and executes after component mounts
   componentDidMount() {
+    //This rerenders the page every second 
     this.interval = setInterval(()=> this.setState({time: Date.now()}), 1000);
 
     fetch('http://localhost:8080/posts/')
+    //This captures the json response I think
     .then(res => res.json())
+    //This I believe is the equivalent of subscribing to the data recevived
     .then((data) => {
+    //This I believe works because it captures the list of posts as an array
       this.setState({posts: data})
     })
     .catch(console.log)
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
   }
 
 render(){
   return (
     <div className="App">
       <body>
-      <div>{this.state.time}</div>
-          <Posts posts={this.state.posts}/>
+            <MainPage time={this.state.time}/>
+            <Posts posts={this.state.posts}/>
       </body>
     </div>
     );
@@ -40,3 +42,6 @@ render(){
 }
 
 export default App;
+//    <MainPage time={this.state.time}/>
+//  <Posts posts={this.state.posts}/>
+//  <Routes time={this.state.time}/>
