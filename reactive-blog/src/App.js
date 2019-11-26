@@ -1,26 +1,34 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Posts from './components/posts'
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+class App extends Component{
+
+  //This will hold the data pending that should be rendered
+  state = {
+    posts: []
+  }
+
+  //This will fetch the posts and executes after component mounts
+  componentDidMount() {
+    fetch('http://localhost:8080/posts/')
+    .then(res => res.json())
+    .then((data) => {
+      this.setState({posts: data})
+    })
+    .catch(console.log)
+  }
+
+render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <body>
+          <Posts posts={this.state.posts}/>
+      </body>
     </div>
-  );
+    );
+  }
 }
 
 export default App;

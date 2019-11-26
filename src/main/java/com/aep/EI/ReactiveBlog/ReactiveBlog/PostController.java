@@ -13,6 +13,7 @@ public class PostController {
     @Autowired
     PostRepository postRepository;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/posts")
     public List<Post> index()  {
         return postRepository.findAll();
