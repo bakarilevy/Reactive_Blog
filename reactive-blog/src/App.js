@@ -4,6 +4,7 @@ import MainPage from './components/MainPage';
 import logo from './logo.svg';
 import './App.css';
 import Routes from './components/routes';
+import PostForm from './components/PostForm';
 
 class App extends Component{
 
@@ -35,6 +36,7 @@ render(){
       <body>
             <MainPage time={this.state.time}/>
             <Posts posts={this.state.posts}/>
+            <PostForm/>
       </body>
     </div>
     );
