@@ -6,7 +6,7 @@ class PostForm extends Component {
         super(props);
 
         this.state = {
-            value: "Please enter your contact information here..."
+            value: "Please enter the json for a new post here..."
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -18,7 +18,8 @@ class PostForm extends Component {
     }
 
     handleSubmit(event) {
-        alert('A request has been submitted: ' + this.state.value);
+        //find some way to call a post request function here.
+        alert('A new post has been submitted: ' + this.state.value);
         event.preventDefault();
     }
 
