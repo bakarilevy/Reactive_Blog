@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 
+
 class MainPage extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            time: Date.now()
+        };
+    }
 
     componentDidMount() {
         this.interval = setInterval(()=> this.setState({time: Date.now()}), 1000);
@@ -15,12 +22,14 @@ class MainPage extends Component {
     render() {
         return(
             <div className="MainPage">
-                <p>This is a test to see if it works</p>
-                <div>{this.props.time}</div>
+                <p>Welcome to the Reactful Blog service!</p>
+                <div>{this.state.time}</div>
             </div>
         );
     }
 
-};
+}
+
+
 
 export default MainPage
