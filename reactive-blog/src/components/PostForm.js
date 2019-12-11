@@ -19,9 +19,29 @@ class PostForm extends Component {
 
     handleSubmit(event) {
         //find some way to call a post request function here.
-        alert('A new post has been submitted: ' + this.state.value);
+        //alert('A new post has been submitted: ' + this.state.value);
+        //this.sendAgain();
+        this.sendPost();
         event.preventDefault();
     }
+
+    sendPost() {
+        const url = 'http://localhost:8080/posts';
+        fetch(url,
+            {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: '2',
+                    title: 'foo',
+                    content: 'bar'
+                })
+            });
+    }
+
 
     render() {
         return(

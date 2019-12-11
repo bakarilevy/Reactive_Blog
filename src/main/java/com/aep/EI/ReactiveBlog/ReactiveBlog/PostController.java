@@ -19,12 +19,14 @@ public class PostController {
         return postRepository.findAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/posts/{id}")
     public Post show(@PathVariable String id)  {
         long search = Long.parseLong(id);
         return postRepository.findById(search).get();
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/posts")
     public void create(@RequestBody Map<String, String> body) {
         Long catchId = Long.parseLong(body.get("id"));
@@ -34,6 +36,7 @@ public class PostController {
         postRepository.save(newPost);
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/posts/{id}")
     public void update(@PathVariable String id, Map<String, String> body)  {
         long search = Long.parseLong(id);
@@ -46,6 +49,7 @@ public class PostController {
 
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/posts/{id}")
     public void delete(@PathVariable String id)  {
         long search = Long.parseLong(id);
