@@ -17,7 +17,7 @@ class GetOne extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.createOne = this.createOne.bind(this);
         this.getOne = this.getOne.bind(this);
-
+        this.renderMyPost = this.renderMyPost.bind(this);
     }
 
     // componentDidMount() {
