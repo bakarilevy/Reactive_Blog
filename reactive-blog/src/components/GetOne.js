@@ -90,7 +90,6 @@ class GetOne extends Component {
 
     render()  {
         return(
-        //Needs two buttons or maybe one that then does the other
         <div>
         
             <label>New Post
