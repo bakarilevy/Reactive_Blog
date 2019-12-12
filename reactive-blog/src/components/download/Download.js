@@ -10,17 +10,12 @@ class Download extends Component  {
             href: '',
             fileFound: false
         };
-        this.getFile = this.getFile.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.testDownload = this.testDownload.bind(this);
-        this.testFunction = this.searchFile.bind(this);
         this.sleep = this.sleep.bind(this);
-        this.downloadButton = this.renderDownloadButton.bind(this);
+        this.renderDownloadButton = this.renderDownloadButton.bind(this);
         this.searchFile = this.searchFile.bind(this);
     }
 
-    //I need to create a field to enter text that will post a request to the backend capture the file
-    //then ideally open the file system to select save destination
 
     handleChange(event) {
         this.setState({[event.target.name]: event.target.value});
@@ -30,27 +25,6 @@ class Download extends Component  {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-    getFile() {
-        fetch(
-            this.state.url + this.state.search,
-            {
-                method: 'GET'
-            }
-        )
-        .then((data)=>{this.setState({file: data})})
-    }
-
-    testDownload() {
-        const newHref = this.state.url + this.state.search;
-        // fetch(
-        //     this.state.url + this.state.search,
-        //     {
-        //         method: 'GET'
-        //     }
-        // )
-        this.setState({href: newHref});
-        
-    }
 
     renderDownloadButton() {
         return(
@@ -59,7 +33,6 @@ class Download extends Component  {
         </div>
         )
     }
-
 
     searchFile()  {
         let url = this.state.url + this.state.search;
@@ -80,10 +53,6 @@ class Download extends Component  {
         })
     }
 
-
-//Component mount should get all file names and render on screen with a button next
-//to each entry to download specific file
- //href={this.state.url}
 
     render(){
         return(
