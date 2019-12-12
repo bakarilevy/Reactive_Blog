@@ -6,7 +6,7 @@ class GetOne extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: '2',
+            id: '1',
             title: 'foo',
             content: 'bar',
             formSubmitted: false,
@@ -20,18 +20,6 @@ class GetOne extends Component {
         this.renderMyPost = this.renderMyPost.bind(this);
     }
 
-    // componentDidMount() {
-
-    // }
-
-    // shouldComponentUpdate() {
-    //     return this.state.formSubmitted;
-    // }
-
-    // componentDidUpdate() {
-
-    // }
-
     handleChange(event) {
         this.setState({[event.target.name]: event.target.value});
     }
@@ -41,7 +29,9 @@ class GetOne extends Component {
         this.createOne();
         this.setState({formSubmitted: true});
         this.getOne();
+
     }
+
 
     createOne() {
 
@@ -75,11 +65,11 @@ class GetOne extends Component {
         <center>My Post</center>
         {myPost.map((post)=>(
                 <div class="card">
-                <div class="card-body"></div>
-                <h5 class="card-title">{post.title}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{post.id}</h6>
-                <p>{post.content}</p>
-        </div>
+                    <div class="card-body"></div>
+                    <h5 class="card-title">{post.title}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{post.id}</h6>
+                    <p>{post.content}</p>
+                </div>
             )
                 )}
         </div>
