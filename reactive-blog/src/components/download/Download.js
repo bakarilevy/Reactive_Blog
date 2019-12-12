@@ -55,7 +55,7 @@ class Download extends Component  {
     renderDownloadButton() {
         return(
         <div className="DownloadButton">
-            <button><a href={this.state.href} download={this.state.href}>Test</a></button>
+            <a href={this.state.href} download={this.state.href}><button>Download</button></a>
         </div>
         )
     }
