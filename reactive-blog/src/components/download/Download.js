@@ -13,8 +13,10 @@ class Download extends Component  {
         this.getFile = this.getFile.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.testDownload = this.testDownload.bind(this);
-        this.testFunction = this.testFunction.bind(this);
+        this.testFunction = this.searchFile.bind(this);
         this.sleep = this.sleep.bind(this);
+        this.downloadButton = this.renderDownloadButton.bind(this);
+        this.searchFile = this.searchFile.bind(this);
     }
 
     //I need to create a field to enter text that will post a request to the backend capture the file
@@ -50,18 +52,26 @@ class Download extends Component  {
         
     }
 
+    renderDownloadButton() {
+        return(
+        <div className="DownloadButton">
+            <button><a href={this.state.href} download={this.state.href}>Test</a></button>
+        </div>
+        )
+    }
 
 
-    testFunction()  {
+    searchFile()  {
         let url = this.state.url + this.state.search;
         let request = new Request(url);
         fetch(request)
         .then((response)=>{
             if(response.ok){
                 this.setState({fileFound: true});
+                this.setState({href:url});
             }
         });
-        this.sleep(2000).then(()=>{
+        this.sleep(300).then(()=>{
             if(this.state.fileFound){
                 alert("File was found.");
             } else {
@@ -78,16 +88,14 @@ class Download extends Component  {
     render(){
         return(
             <div className="MainForm">
-            <div>
-                <label>Search File to Download
-                    <input type='text' name='search' onChange={this.handleChange} value={this.state.search}></input>
-                    <button onClick={this.testFunction}>Search</button>
-                </label>
-            </div>
-            <div className="TestButton">
-                <button onClick={this.testDownload}><a href={this.state.href} download={this.state.href}>Test</a></button>
-            </div>
-            </div>
+                <div>
+                    <label>Search File to Download
+                        <input type='text' name='search' onChange={this.handleChange} value={this.state.search}></input>
+                        <button onClick={this.searchFile}>Search</button>
+                    </label>
+                </div>
+                    {this.state.fileFound && this.renderDownloadButton()}
+                </div>
         );
     }
 
