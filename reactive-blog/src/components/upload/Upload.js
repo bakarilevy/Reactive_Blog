@@ -17,6 +17,7 @@ class Upload extends Component{
         this.uploadFiles = this.uploadFiles.bind(this);
         this.sendRequest = this.sendRequest.bind(this);
         this.renderActions = this.renderActions.bind(this);
+        this.newSend = this.newSend.bind(this);
     }
 
     onFilesAdded(files) {
@@ -84,6 +85,24 @@ class Upload extends Component{
         }
     }
 
+    newSend()  {
+        //const file = this.state.files[0];
+        const files = this.state.files;
+        const endpoint = "http://localhost:8080/uploadMultipleFiles";
+        const data = new FormData();
+        for(let i = 0; i < files.length; i++) {
+            let file = files[i];
+            data.append("files", file, file.name);
+        }
+       // data.append("file", file, file.name);
+        fetch(
+            endpoint, {
+                method: 'POST',
+                body: data,
+            }
+        )
+    }
+
     sendRequest(file)  {
         return new Promise((resolve, reject)=>{
             const request = new XMLHttpRequest();
@@ -116,7 +135,7 @@ class Upload extends Component{
             const formData = new FormData();
             formData.append("file", file, file.name);
 
-            request.open("POST", "http://localhost:8080/upload");
+            request.open("POST", "http://localhost:8080/uploadFile");
             request.send(formData);
         });
     }
@@ -124,6 +143,7 @@ class Upload extends Component{
     render() {
         return(
             <div className="Upload">
+                    <button onClick={this.newSend}>TRY THIS</button>
                 <span className="Title">UploadFiles</span>
                 <div className="Content">
                     <div>

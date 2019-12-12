@@ -26,6 +26,7 @@ public class FileController {
     @Autowired
     private FileStorageService fileStorageService;
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/uploadFile")
     public UploadFileResponse uploadFile(@RequestParam("file")MultipartFile file) {
             String fileName = fileStorageService.storeFile(file);
@@ -36,14 +37,17 @@ public class FileController {
             return new UploadFileResponse(fileName, fileDownloadUri, file.getContentType(), file.getSize());
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/uploadMultipleFiles")
     public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
+        System.out.println("Hit");
         return Arrays.asList(files)
                 .stream()
                 .map(file ->uploadFile(file))
                 .collect(Collectors.toList());
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/downloadFile/{fileName:.+}")
     public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
         //Load file as resource
