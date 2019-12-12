@@ -40,7 +40,6 @@ public class FileController {
     @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/uploadMultipleFiles")
     public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
-        System.out.println("Hit");
         return Arrays.asList(files)
                 .stream()
                 .map(file ->uploadFile(file))

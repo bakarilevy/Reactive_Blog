@@ -35,7 +35,6 @@ class GetOne extends Component {
     handleChange(event) {
         this.setState({[event.target.name]: event.target.value});
     }
-    //I may need to async await the createOne function, then attempt to render it.
 
 
     handleSubmit() {
@@ -47,7 +46,6 @@ class GetOne extends Component {
     createOne() {
 
         let myPost = new Post(this.state.id, this.state.title, this.state.content);
-        //Await this then maybe getOne? or possibly have an endpoint that saves post and returns it?
         fetch(
             this.state.url,
             {

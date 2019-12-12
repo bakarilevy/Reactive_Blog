@@ -61,7 +61,7 @@ class Upload extends Component{
             return(
                 <button
                     disabled={this.state.files.length < 0 || this.state.uploading}
-                    onClick={this.uploadFiles}
+                    onClick={this.newSend}
                 >
                     Upload
                 </button>
@@ -101,6 +101,14 @@ class Upload extends Component{
                 body: data,
             }
         )
+        .then(
+            function(response) {
+                if(response.ok) {
+                    alert("Files successfully uploaded");
+                }
+        })
+        
+
     }
 
     sendRequest(file)  {
@@ -143,7 +151,6 @@ class Upload extends Component{
     render() {
         return(
             <div className="Upload">
-                    <button onClick={this.newSend}>TRY THIS</button>
                 <span className="Title">UploadFiles</span>
                 <div className="Content">
                     <div>

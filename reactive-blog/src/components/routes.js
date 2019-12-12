@@ -11,6 +11,7 @@ import NewView from './NewView';
 import Upload from './upload/Upload';
 import Dropzone from './dropzone/Dropzone';
 import Progress from './progress/Progress';
+import Download from './download/Download';
 
 const Routes = ()=> {
     return(
@@ -21,10 +22,8 @@ const Routes = ()=> {
                 <li><Link to="/form">Form</Link></li>
                 <li><Link to="/posts">Posts</Link></li>
                 <li><Link to="/getone">GetOne</Link></li>
-                <li><Link to="/views">Views</Link></li>
                 <li><Link to="/upload">Upload</Link></li>
-                <li><Link to="/dropzone">Dropzone</Link></li>
-                <li><Link to="/progress">ProgressBar</Link></li>
+                <li><Link to="/download">Download</Link></li>
             </ul>
         </div>
 
@@ -36,6 +35,7 @@ const Routes = ()=> {
             <Route path="/upload" component={Upload}/>
             <Route path="/dropzone" component={Dropzone}/>
             <Route path="/progress" component={Progress}/>
+            <Route path="/download" component={Download}/>
 
         </BrowserRouter>
     ); 
