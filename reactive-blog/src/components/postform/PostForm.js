@@ -13,6 +13,7 @@ class PostForm extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.sendPost = this.sendPost.bind(this);
     }
 
     handleChange(event) {
@@ -55,7 +56,7 @@ class PostForm extends Component {
                 <label> New Post Content
                         <textarea name="value" class="valueInput" value={this.state.value} onChange={this.handleChange}/>
                 </label>
-                <input class="submitbutton" type='submit' value='Submit'/>
+                <button class="submitbutton" onClick={this.sendPost}>Submit</button>
             </form>
             </div>
         );
