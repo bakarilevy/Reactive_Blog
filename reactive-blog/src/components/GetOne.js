@@ -18,6 +18,7 @@ class GetOne extends Component {
         this.createOne = this.createOne.bind(this);
         this.getOne = this.getOne.bind(this);
         this.renderMyPost = this.renderMyPost.bind(this);
+        this.sleep = this.sleep.bind(this);
     }
 
     handleChange(event) {
@@ -30,6 +31,10 @@ class GetOne extends Component {
         this.setState({formSubmitted: true});
         this.getOne();
 
+    }
+
+    sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
 
 
@@ -51,11 +56,11 @@ class GetOne extends Component {
     getOne() {
         const endpoint = this.state.url + this.state.id;
         fetch(endpoint)
-        .then(res => res.json())
         .then((data) => {
-          this.setState({renderedPost: [data]})
+            this.setState({renderedPost: [data]});
         })
         .catch(console.log)
+        console.log(this.state.renderedPost[0])
     }
 
     renderMyPost()  {
@@ -64,10 +69,10 @@ class GetOne extends Component {
         <div>
         <center>My Post</center>
         {myPost.map((post)=>(
-                <div class="card">
-                    <div class="card-body"></div>
-                    <h5 class="card-title">{post.title}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{post.id}</h6>
+                <div className ="card">
+                    <div className="card-body"></div>
+                    <h5 className="card-title">{post.title}</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">{post.id}</h6>
                     <p>{post.content}</p>
                 </div>
             )
