@@ -6,7 +6,8 @@ class PostForm extends Component {
         super(props);
 
         this.state = {
-            value: "Please enter the json for a new post here..."
+            value: "Please enter the content for your new post here...",
+            title: "Title of Post"
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -14,7 +15,7 @@ class PostForm extends Component {
     }
 
     handleChange(event) {
-        this.setState({ value: event.target.value});
+        this.setState({ [event.target.name]: event.target.value});
     }
 
     handleSubmit(event) {
@@ -35,9 +36,9 @@ class PostForm extends Component {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    id: '2',
-                    title: 'foo',
-                    content: 'bar'
+                    id: this.props.formId,
+                    title: this.state.title,
+                    content: this.state.value
                 })
             });
     }
@@ -45,12 +46,17 @@ class PostForm extends Component {
 
     render() {
         return(
+            <div className="PostForm">
             <form onSubmit={this.handleSubmit}>
-                <label>Test Label
-                        <textarea value={this.state.value} onChange={this.handleChange}/>
+            <label> New Post Title
+                <input type="text" name="title" value={this.state.title} onChange={this.handleChange}></input>
+            </label>    
+                <label> New Post Content
+                        <textarea name="value" value={this.state.value} onChange={this.handleChange}/>
                 </label>
                 <input type='submit' value='Submit'/>
             </form>
+            </div>
         );
     }
 
