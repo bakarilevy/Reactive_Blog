@@ -10,7 +10,7 @@ class GetOne extends Component {
             title: 'foo',
             content: 'bar',
             formSubmitted: false,
-            renderedPost:[],
+            renderedPost:{},
             url: 'http://localhost:8080/posts/',
         };
         this.handleChange = this.handleChange.bind(this);
@@ -37,7 +37,6 @@ class GetOne extends Component {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
-
     createOne() {
 
         let myPost = new Post(this.state.id, this.state.title, this.state.content);
@@ -56,27 +55,30 @@ class GetOne extends Component {
     getOne() {
         const endpoint = this.state.url + this.state.id;
         fetch(endpoint)
+        .then(this.sleep(2000))
+        .then(res => res.json())
         .then((data) => {
-            this.setState({renderedPost: [data]});
+            let newPost = new Post(data.id, data.title, data.content);
+            this.setState({renderedPost: newPost});
         })
         .catch(console.log)
-        console.log(this.state.renderedPost[0])
+        console.log(this.state.renderedPost.title);
+        console.log(this.state.renderedPost.content);
     }
 
     renderMyPost()  {
-        let myPost = this.state.renderedPost;
+        let post = this.state.renderedPost;
         return(
         <div>
         <center>My Post</center>
-        {myPost.map((post)=>(
+      
                 <div className ="card">
                     <div className="card-body"></div>
                     <h5 className="card-title">{post.title}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">{post.id}</h6>
                     <p>{post.content}</p>
                 </div>
-            )
-                )}
+                
         </div>
         );
     }
