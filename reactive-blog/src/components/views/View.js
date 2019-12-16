@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import PostForm from '../PostForm';
+import PostForm from '../postform/PostForm';
+import './View.css';
 
 class View extends Component {
 

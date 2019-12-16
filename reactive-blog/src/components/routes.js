@@ -4,7 +4,7 @@ import { Route, BrowserRouter, Link } from 'react-router-dom';
 //All page componenets need to be imported here
 
 import MainPage from './MainPage';
-import PostForm from './PostForm';
+import PostForm from './postform/PostForm';
 import Posts from './posts';
 import GetOne from './GetOne';
 import NewView from './NewView';
