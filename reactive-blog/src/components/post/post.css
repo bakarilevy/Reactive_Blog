@@ -1,5 +1,13 @@
-.post{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+
+.post-id {
+    color: rosybrown;
+}
+
+.post-title {
+    color: teal;
+}
+
+.post-content {
+    color: crimson;
 }

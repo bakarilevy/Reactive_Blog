@@ -4,7 +4,6 @@ import Header from './header';
 import Navbar from './navbar';
 import Column from './column';
 import Footer from './footer';
-import Routes from '../routes/routes';
 import { Route, BrowserRouter, Link } from 'react-router-dom';
 import MainPage from '../MainPage';
 import PostForm from '../postform/PostForm';
