@@ -1,4 +1,4 @@
-class Post {
+class PostModel {
     constructor(id, title, content) {
         this.id = id;
         this.title = title;
@@ -6,4 +6,4 @@ class Post {
     }
 }
 
-export default Post
+export default PostModel

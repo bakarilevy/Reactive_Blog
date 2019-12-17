@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from './Post';
+import PostModel from './PostModel';
 
 class GetOne extends Component {
 
@@ -39,7 +39,7 @@ class GetOne extends Component {
 
     createOne() {
 
-        let myPost = new Post(this.state.id, this.state.title, this.state.content);
+        let myPost = new PostModel(this.state.id, this.state.title, this.state.content);
         fetch(
             this.state.url,
             {
@@ -58,7 +58,7 @@ class GetOne extends Component {
         .then(this.sleep(2000))
         .then(res => res.json())
         .then((data) => {
-            let newPost = new Post(data.id, data.title, data.content);
+            let newPost = new PostModel(data.id, data.title, data.content);
             this.setState({renderedPost: newPost});
         })
         .catch(console.log)

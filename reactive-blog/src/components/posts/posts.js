@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './posts.css';
+import Post from '../post/post';
 //This component will render posts from data received
 //it needs to be imported into App.js
 class Posts extends Component  {
@@ -16,16 +17,9 @@ class Posts extends Component  {
         let posts = this.props.posts;
 
         return(
-            <div>
-                <center>Post Cards</center>
+            <div className="post list">
                 {posts.map((post)=>(
-                                    <div class="card">
-                                        <div class="card-body"></div>
-                                            <h5 class="card-title">{post.title}</h5>
-                                            <h6 class="card-subtitle mb-2 text-muted">{post.id}</h6>
-                                            <p>{post.content}</p>
-                                    </div>
-                )
+                    <Post id={post.id} title={post.title} content={post.content}/>)
                 )}
             </div>
         );
