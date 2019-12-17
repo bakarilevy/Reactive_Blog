@@ -1,32 +1,19 @@
 import React, { Component } from 'react';
-
+import './posts.css';
 //This component will render posts from data received
 //it needs to be imported into App.js
 class Posts extends Component  {
 
     //This will hold the data pending that should be rendered
-    constructor() {
-        super();
-        this.state = {
-            posts: []
-        }
+    constructor(props) {
+        super(props);
     }
 
-    componentDidMount() {
-        fetch('http://localhost:8080/posts/')
-        //This captures the json response I think
-        .then(res => res.json())
-        //This I believe is the equivalent of subscribing to the data recevived
-        .then((data) => {
-        //This I believe works because it captures the list of posts as an array
-          this.setState({posts: data})
-        })
-        .catch(console.log)
-    }
+
 
     
     render() {
-        let posts = this.state.posts;
+        let posts = this.props.posts;
 
         return(
             <div>

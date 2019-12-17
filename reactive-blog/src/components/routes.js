@@ -5,7 +5,7 @@ import { Route, BrowserRouter, Link } from 'react-router-dom';
 
 import MainPage from './MainPage';
 import PostForm from './postform/PostForm';
-import Posts from './posts';
+import Posts from './posts/posts';
 import GetOne from './GetOne';
 import NewView from './NewView';
 import Upload from './upload/Upload';

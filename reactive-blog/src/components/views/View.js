@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PostForm from '../postform/PostForm';
 import './View.css';
+import Posts from '../posts/posts';
 
 class View extends Component {
 
@@ -33,6 +34,7 @@ class View extends Component {
                 <h1>Welcome to the views page</h1>
                 <p>From here you can create a new post.</p>
                 <PostForm formId={this.state.formId} />
+                <Posts posts={this.state.posts}/>
             </div>
         );
     }
