@@ -4,7 +4,8 @@ import Header from './header';
 import Navbar from './navbar';
 import Column from './column';
 import Footer from './footer';
-import Routes from '../routes';
+import Routes from '../routes/routes';
+
 class Container extends Component {
 
 constructor(props) {

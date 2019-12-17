@@ -31,7 +31,7 @@ class View extends Component {
     render() {
         return(
             <div className="View">
-                <h1>Welcome to the views page</h1>
+                <h1>Welcome to the view!</h1>
                 <p>From here you can create a new post.</p>
                 <PostForm formId={this.state.formId} />
                 <Posts posts={this.state.posts}/>

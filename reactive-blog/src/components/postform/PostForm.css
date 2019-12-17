@@ -11,6 +11,7 @@
 }
 
 .submitbutton {
+    margin: 8px 0;
     background-color: firebrick;
     color: white;
     padding: 15px, 32px;
@@ -25,6 +26,7 @@
 }
 
 .submitbutton:hover {
+    margin: 14px 0;
     background-color: white;
     color: firebrick;
     border: 1px solid firebrick;
@@ -41,9 +43,28 @@
     transform: translateY(4px);
 }
 
-.input {
+input {
     margin: 8px, 0;
     box-sizing: border-box;
+    border: 2px solid #cccccc;
+    background-color: ghostwhite;
+    display: inline-block;
+    width: 100%;
     padding: 12px 20px;
-    
+    margin: 8px 0;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #cccccc;
+    border-radius: 4px;
+    background-color: ghostwhite;
+    resize: none;
+}
+
+label {
+    color: teal;
 }

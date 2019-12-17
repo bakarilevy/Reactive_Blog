@@ -50,12 +50,10 @@ class PostForm extends Component {
         return(
             <div className="PostForm">
             <form  class='styleform' onSubmit={this.handleSubmit}>
-            <label> New Post Title
-                <input type="text" name="title" class="titleInput" value={this.state.title} onChange={this.handleChange}></input>
-            </label>    
-                <label> New Post Content
-                        <textarea name="value" class="valueInput" value={this.state.value} onChange={this.handleChange}/>
-                </label>
+                <label for="title"> New Post Title</label>
+                <input type="text" name="title" class="titleInput" value={this.state.title} onChange={this.handleChange}/>
+                <label for="content"> New Post Content</label>
+                <textarea name="value" class="valueInput" value={this.state.value} onChange={this.handleChange}/>
                 <button class="submitbutton" onClick={this.sendPost}>Submit</button>
             </form>
             </div>

@@ -18,3 +18,23 @@
     color: violet;
     float: left;
 }
+
+.routes-navbar {
+    overflow: hidden;
+    background-color: plum;
+}
+
+.routes-navbar li {
+    float:left;
+    display: block;
+    color: palegoldenrod;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.routes-navbar li:hover {
+    background-color: papayawhip;
+    color: palevioletred;
+    float: left;
+}

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './navbar.css';
-import Routes from '../routes';
+import Routes from '../routes/routes';
 class Navbar extends Component {
 
     constructor(props) {
@@ -9,22 +9,21 @@ class Navbar extends Component {
     }
 
         //May refactor this to use the browser router links...or maybe imbed it...?
-    renderDefault() {
+    render() {
         return(
             <div className="top-navbar">
             <a href="http://localhost:3000">Main</a>
             <a href="http://localhost:3000/views">Views</a>
             <a href="http://localhost:3000/upload">Upload</a>
+            <a href="http://localhost:3000/download">Download</a>
         </div>
         );
     }
 
-    render() {
+    renderDefault() {
         return(
-            <div className="top-navbar">
-                <a href="http://localhost:3000">Main</a>
-                <a href="http://localhost:3000/views">Views</a>
-                <a href="http://localhost:3000/upload">Upload</a>
+            <div className="routes-navbar">
+                <Routes/>
             </div>
         );
     }
