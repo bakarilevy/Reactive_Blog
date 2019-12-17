@@ -21,12 +21,10 @@ class PostForm extends Component {
     }
 
     handleSubmit(event) {
-        //find some way to call a post request function here.
-        //alert('A new post has been submitted: ' + this.state.value);
-        //this.sendAgain();
-        this.sendPost();
         event.preventDefault();
+        this.sendPost();
     }
+
 
     sendPost() {
         const url = 'http://localhost:8080/posts';
@@ -54,7 +52,7 @@ class PostForm extends Component {
                 <input type="text" name="title" class="titleInput" value={this.state.title} onChange={this.handleChange}/>
                 <label for="content"> New Post Content</label>
                 <textarea name="value" class="valueInput" value={this.state.value} onChange={this.handleChange}/>
-                <button class="submitbutton" onClick={this.sendPost}>Submit</button>
+                <button class="submitbutton" onClick={this.handleSubmit}>Submit</button>
             </form>
             </div>
         );

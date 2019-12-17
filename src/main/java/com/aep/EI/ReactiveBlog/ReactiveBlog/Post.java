@@ -1,9 +1,6 @@
 package com.aep.EI.ReactiveBlog.ReactiveBlog;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Post {
@@ -13,6 +10,7 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
+    @Lob
     private String content;
 
     public Post(long id, String title, String content) {
