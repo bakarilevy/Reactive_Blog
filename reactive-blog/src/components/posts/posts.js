@@ -17,7 +17,7 @@ class Posts extends Component  {
         let posts = this.props.posts;
 
         return(
-            <div className="post list">
+            <div className="post-list">
                 {posts.map((post)=>(
                     <Post id={post.id} title={post.title} content={post.content}/>)
                 )}

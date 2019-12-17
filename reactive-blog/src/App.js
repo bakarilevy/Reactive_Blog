@@ -1,20 +1,16 @@
 import React, {Component} from 'react';
 import './App.css';
 import Routes from './components/routes';
-import Header from './components/layout/header';
-import Navbar from './components/layout/navbar';
-import Column from './components/layout/column';
+import Container from './components/layout/container';
 class App extends Component{
 
 
 render(){
   return (
     <div className="App">
-      <Header/>
-      <Navbar/>
-      <Column/>
       <body>
             <Routes/>
+            <Container/>
       </body>
     </div>
     );

@@ -6,12 +6,14 @@ class Navbar extends Component {
         super(props);
     }
 
+        //May refactor this to use the browser router links...or maybe imbed it...?
+
     render() {
         return(
             <div className="top-navbar">
-                <a href="#">Link</a>
-                <a href="#">Link</a>
-                <a href="#">Link</a>
+                <a href="http://localhost:3000">Main</a>
+                <a href="http://localhost:3000/views">Views</a>
+                <a href="http://localhost:3000/upload">Upload</a>
             </div>
         );
     }

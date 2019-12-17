@@ -20,9 +20,6 @@ const Routes = ()=> {
         <div>
             <ul>
                 <li><Link to="/main">Main</Link></li>
-                <li><Link to="/form">Form</Link></li>
-                <li><Link to="/posts">Posts</Link></li>
-                <li><Link to="/getone">GetOne</Link></li>
                 <li><Link to="/upload">Upload</Link></li>
                 <li><Link to="/download">Download</Link></li>
                 <li><Link to="/views">Views</Link></li>
