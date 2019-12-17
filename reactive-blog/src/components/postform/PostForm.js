@@ -22,13 +22,13 @@ class PostForm extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.sendPost();
+        this.sendPost().then(() => this.props.updateView());
     }
 
 
     sendPost() {
         const url = 'http://localhost:8080/posts';
-        fetch(url,
+        return fetch(url,
             {
                 method: 'POST',
                 headers: {

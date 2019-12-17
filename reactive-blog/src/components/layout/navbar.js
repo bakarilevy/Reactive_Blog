@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './navbar.css';
 import Routes from '../routes/routes';
+import { Link } from 'react-router-dom';
 class Navbar extends Component {
 
     constructor(props) {
@@ -9,7 +10,7 @@ class Navbar extends Component {
     }
 
         //May refactor this to use the browser router links...or maybe imbed it...?
-    render() {
+    renderDefault() {
         return(
             <div className="top-navbar">
             <a href="http://localhost:3000">Main</a>
@@ -20,10 +21,15 @@ class Navbar extends Component {
         );
     }
 
-    renderDefault() {
+    render() {
         return(
             <div className="routes-navbar">
-                <Routes/>
+               <ul>
+                <li><Link to="/main">Main</Link></li>
+                <li><Link to="/upload">Upload</Link></li>
+                <li><Link to="/download">Download</Link></li>
+                <li><Link to="/views">Views</Link></li>
+                </ul>
             </div>
         );
     }

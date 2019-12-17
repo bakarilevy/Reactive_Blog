@@ -12,10 +12,12 @@ class View extends Component {
             message: "",
             posts: []
         }
+        this.fetchPosts = this.fetchPosts.bind(this);
+        this.updateView = this.updateView.bind(this);
     }
 
 
-    componentDidMount() {
+    fetchPosts() {
         fetch('http://localhost:8080/posts/')
         .then(res => res.json())
         .then((data) => {
@@ -28,12 +30,20 @@ class View extends Component {
         .catch(console.log);
     }
 
+    componentDidMount() {
+        this.fetchPosts();
+    }
+
+    updateView() {
+        this.fetchPosts();
+    }
+
     render() {
         return(
             <div className="View">
                 <h1>Welcome to the view!</h1>
                 <p>From here you can create a new post.</p>
-                <PostForm formId={this.state.formId} />
+                <PostForm formId={this.state.formId} updateView={this.updateView} />
                 <Posts posts={this.state.posts}/>
             </div>
         );
