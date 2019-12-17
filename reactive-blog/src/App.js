@@ -9,7 +9,6 @@ render(){
   return (
     <div className="App">
       <body>
-            <Routes/>
             <Container/>
       </body>
     </div>

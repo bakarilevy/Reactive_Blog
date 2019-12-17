@@ -4,6 +4,7 @@ import Header from './header';
 import Navbar from './navbar';
 import Column from './column';
 import Footer from './footer';
+import Routes from '../routes';
 class Container extends Component {
 
 constructor(props) {
@@ -15,6 +16,7 @@ render() {
             <Header/>
             <Navbar/>
             <Column/>
+            <Routes/>
             <Footer/>
         </div>
     );
