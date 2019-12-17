@@ -40,3 +40,10 @@
     box-shadow: 0 5px #666666;
     transform: translateY(4px);
 }
+
+.input {
+    margin: 8px, 0;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    
+}
