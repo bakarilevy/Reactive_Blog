@@ -6,6 +6,13 @@ class Navbar extends Component {
         super(props);
     }
 
+    render() {
+        return(
+            <div className="navbar">
+            </div>
+        );
+    }
+
 }
 
 export default Navbar

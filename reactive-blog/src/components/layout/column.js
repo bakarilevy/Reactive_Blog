@@ -6,6 +6,13 @@ class Column extends Component {
         super(props);
     }
 
+    render() {
+        return(
+            <div className="column">
+            </div>
+        );
+    }
+
 }
 
 export default Column

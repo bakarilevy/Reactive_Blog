@@ -6,6 +6,13 @@ class Header extends Component {
         super(props);
     }
 
+    render() {
+        return(
+            <div className="header">
+            </div>
+        );
+    }
+
 }
 
 export default Header
