@@ -1,0 +1,20 @@
+.top-navbar {
+    overflow: hidden;
+    background-color: purple;
+    
+}
+
+.top-navbar a {
+    float: left;
+    display: block;
+    color: palegreen;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.top-navbar a:hover {
+    background-color: peachpuff;
+    color: violet;
+    float: left;
+}
