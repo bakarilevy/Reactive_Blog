@@ -8,7 +8,7 @@ class View extends Component {
         super(props);
         this.state = {
             formId: 0,
-            message: "Look at me! Wee!",
+            message: "",
             posts: []
         }
     }
@@ -16,11 +16,8 @@ class View extends Component {
 
     componentDidMount() {
         fetch('http://localhost:8080/posts/')
-        //This captures the json response I think
         .then(res => res.json())
-        //This I believe is the equivalent of subscribing to the data recevived
         .then((data) => {
-        //This I believe works because it captures the list of posts as an array
           this.setState({posts: data})
         })
         .then(()=>{
@@ -34,7 +31,7 @@ class View extends Component {
         return(
             <div className="View">
                 <h1>Welcome to the views page</h1>
-                <p>From here you can select from a number of different views.</p>
+                <p>From here you can create a new post.</p>
                 <PostForm formId={this.state.formId} />
             </div>
         );
