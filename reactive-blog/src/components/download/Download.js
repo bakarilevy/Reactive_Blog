@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Download.css';
 
 class Download extends Component  {
 
@@ -28,7 +29,7 @@ class Download extends Component  {
 
     renderDownloadButton() {
         return(
-        <div className="DownloadButton">
+        <div className="download-button">
             <a href={this.state.href} download={this.state.href}><button>Download</button></a>
         </div>
         )
@@ -60,7 +61,7 @@ class Download extends Component  {
                 <div>
                     <label>Search File to Download
                         <input type='text' name='search' onChange={this.handleChange} value={this.state.search}></input>
-                        <button onClick={this.searchFile}>Search</button>
+                        <button className="search-button" onClick={this.searchFile}>Search</button>
                     </label>
                 </div>
                     {this.state.fileFound && this.renderDownloadButton()}

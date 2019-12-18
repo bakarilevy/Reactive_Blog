@@ -15,6 +15,7 @@ import Dropzone from '../dropzone/Dropzone';
 import Progress from '../progress/Progress';
 import Download from '../download/Download';
 import View from '../views/View';
+import Canvas from '../animations/canvas/canvas';
 
 class Container extends Component {
 
@@ -38,6 +39,7 @@ render() {
                 <Route path="/progress" component={Progress}/>
                 <Route path="/download" component={Download}/>
                 <Route path="/views" component={View}/>
+                <Route path="/canvas" component={Canvas}/>
             </BrowserRouter>
             <Footer/>
         </div>

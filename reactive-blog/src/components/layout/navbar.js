@@ -29,6 +29,7 @@ class Navbar extends Component {
                 <li><Link to="/upload">Upload</Link></li>
                 <li><Link to="/download">Download</Link></li>
                 <li><Link to="/views">Views</Link></li>
+                <li><Link to="/canvas">Canvas</Link></li>
                 </ul>
             </div>
         );
